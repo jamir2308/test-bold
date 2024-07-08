@@ -1,33 +1,142 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Proyecto de Dashboard en Next.js con TypeScript
 
-## Getting Started
+Este proyecto es un dashboard desarrollado con Next.js y TypeScript que incluye funcionalidades como filtrado de datos, persistencia de filtros, y pruebas unitarias utilizando Jest y React Testing Library. El proyecto está diseñado para ser responsive y se adapta a diferentes dispositivos.
 
-First, run the development server:
+## Contenido
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Características](#características)
+- [Tecnologías](#tecnologías)
+- [Instalación](#instalación)
+- [Ejecución](#ejecución)
+- [Pruebas](#pruebas)
+- [Estructura del Proyecto](#estructura-del-proyecto)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Características
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Filtrado de datos por "Hoy", "Esta Semana" y "Julio".
+- Persistencia de filtros utilizando Session Storage.
+- Diseño responsivo utilizando breakpoints de MUI y media queries.
+- Pruebas unitarias con Jest y React Testing Library.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Tecnologías
 
-## Learn More
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Material-UI (MUI)](https://mui.com/)
+- [styled-components](https://styled-components.com/)
+- [Jest](https://jestjs.io/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
-To learn more about Next.js, take a look at the following resources:
+## Instalación
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clona el repositorio:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    ```bash
+    git clone https://github.com/tu-usuario/tu-proyecto.git
+    ```
+
+2. Navega al directorio del proyecto:
+
+    ```bash
+    cd tu-proyecto
+    ```
+
+3. Instala las dependencias:
+
+    ```bash
+    npm install
+    ```
+
+## Ejecución
+
+1. Inicia el servidor de desarrollo:
+
+    ```bash
+    npm run dev
+    ```
+
+2. Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la aplicación.
+
+## Pruebas
+
+1. Ejecuta las pruebas unitarias:
+
+    ```bash
+    npm test
+    ```
+
+2. Para ejecutar las pruebas en modo watch:
+
+    ```bash
+    npm run test:watch
+    ```
+
+## Estructura del Proyecto
+
+```plaintext
+.
+├── public
+│   ├── payment
+│   │   ├── bancolombia.jpg
+│   │   ├── daviplata.svg
+│   │   ├── mastercard.svg
+│   │   ├── nequi.png
+│   │   ├── pse.png
+│   │   └── visa.svg
+│   ├── filter-outline.svg
+│   ├── info-circle.svg
+│   ├── link.svg
+│   ├── logo-bold.png
+│   ├── question.svg
+│   └── terminal.svg
+├── src
+│   ├── components
+│   │   ├── FilterTabs
+│   │   │   ├── Index.tsx
+│   │   │   └── style.ts
+│   │   ├── FilterModal
+│   │   │   ├── Index.tsx
+│   │   │   └── style.ts
+│   │   ├── SalesCard
+│   │   │   ├── Index.tsx
+│   │   │   └── style.ts
+│   │   ├── Table
+│   │   │   ├── Index.tsx
+│   │   │   └── style.ts
+│   │   └── Header
+│   │       ├── Index.tsx
+│   │       └── style.ts
+│   ├── pages
+│   │   ├── api
+│   │   │   └── transactions.ts
+│   │   └── index.tsx
+│   ├── styles
+│   │   └── colors.ts
+│   ├── utils
+│   │   ├── constants.ts
+│   │   └── sessionStorage.ts
+│   └── types
+│       └── transactions.ts
+├── __tests__
+│   ├── components
+│   │   ├── FilterTabs
+│   │   │   └── Index.test.tsx
+│   │   ├── FilterModal
+│   │   │   └── Index.test.tsx
+│   │   ├── SalesCard
+│   │   │   └── Index.test.tsx
+│   │   ├── Table
+│   │   │   └── Index.test.tsx
+│   │   └── Header
+│   │       └── Index.test.tsx
+├── jest.config.js
+├── jest.setup.ts
+├── next-env.d.ts
+├── next.config.js
+├── package.json
+├── README.md
+└── tsconfig.json
+
 
 ## Deploy on Vercel
 
