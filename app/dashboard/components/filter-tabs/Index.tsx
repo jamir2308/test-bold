@@ -44,7 +44,7 @@ const FilterTabs: React.FC<FilterTabsProps> = ({ onFilterChange, filter }) => {
       </FilterContainer>
       {isMobile && (
           <FormControl fullWidth>
-            <InputLabel id="demo-label">Filtro Fechas</InputLabel>
+            <InputLabel id="demo-label">Rango Fechas</InputLabel>
             <Select
               labelId="demo-label"
               value={filter}

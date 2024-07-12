@@ -33,7 +33,7 @@ export const SearchInput = styled.input`
 `;
 
 export const CustomTableCell = styled(TableCell)`
-  align-content: baseline;
+  align-content: flex-start;
   padding: 10px 16px;
   height: 80px;
 `;

@@ -16,7 +16,12 @@ import { COLORS } from "@/app/styles/colors";
 import Image from "next/image";
 import TransactionDrawer from "../transaction-drawer/Index";
 import { Transaction } from "@/app/types/transactions";
-import { CustomTableCell, GradientHeader, SearchContainer, SearchInput } from "./style";
+import {
+  CustomTableCell,
+  GradientHeader,
+  SearchContainer,
+  SearchInput,
+} from "./style";
 
 interface TransactionTableProps {
   transactions: Transaction[];
@@ -102,8 +107,11 @@ const TransactionTable: React.FC<TransactionTableProps> = ({
 
   const filteredTransactions = transactions.filter((transaction) =>
     Object.values(transaction).some((value) => {
-      if (typeof value === 'string' || typeof value === 'number') {
-        return value.toString().toLowerCase().includes(searchTerm.toLowerCase());
+      if (typeof value === "string" || typeof value === "number") {
+        return value
+          .toString()
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
       }
       return false;
     })
@@ -113,7 +121,9 @@ const TransactionTable: React.FC<TransactionTableProps> = ({
     <>
       <Paper>
         <GradientHeader>
-          <Typography variant="body1" color='white'>Tus ventas de junio</Typography>
+          <Typography variant="body1" color="white">
+            Tus ventas de junio
+          </Typography>
         </GradientHeader>
         <SearchContainer>
           <Image src="/search.svg" width={30} height={30} alt="Icono filtro" />
@@ -203,14 +213,20 @@ const TransactionTable: React.FC<TransactionTableProps> = ({
                           height={20}
                           alt="Icono filtro"
                         />{" "}
-                        *** {transaction.transactionReference}
+                        <Typography whiteSpace="nowrap">
+                          *** {transaction.transactionReference}
+                        </Typography>
                       </Stack>
                     </CustomTableCell>
                     <CustomTableCell padding="normal">
                       {transaction.id}
                     </CustomTableCell>
                     <CustomTableCell padding="normal">
-                      <Typography variant="body2" fontWeight={600}>
+                      <Typography
+                        variant="body2"
+                        fontWeight={500}
+                        whiteSpace="nowrap"
+                      >
                         $ {transaction.amount.toLocaleString()}
                       </Typography>
                       {transaction.deduction && (

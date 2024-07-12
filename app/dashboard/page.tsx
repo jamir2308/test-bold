@@ -1,34 +1,15 @@
 "use client";
+
 import React, { MouseEvent, useEffect, useState } from "react";
 import FilterTabs from "./components/filter-tabs/Index";
-import { Box, Button, CircularProgress, Stack } from "@mui/material";
+import { Box, CircularProgress, Stack } from "@mui/material";
 import SalesCard from "./components/sales-card/Index";
-import styled from "styled-components";
 import Image from "next/image";
 import TransactionTable from "./components/table/Index";
 import FilterModal from "./components/filter-modal/Index";
 import { Transaction } from "../types/transactions";
 import { getSessionStorage, setSessionStorage } from "../utils/sessionStorage";
-
-const StyledButton = styled(Button)`
-  width: 170px;
-  border-radius: 4px;
-`;
-
-const PageContainer = styled(Box)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  overflow-y: auto;
-  padding: 20px;
-
-  @media (max-width: 960px) {
-    padding: 10px;
-    flex-direction: column;
-  }
-`;
+import { PageContainer, StyledButton } from "./style";
 
 const filterTransactions = (
   transactions: Transaction[],

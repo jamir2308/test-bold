@@ -22,7 +22,7 @@ const SalesCard: React.FC<SalesCardProps> = ({ title, amount, filter }) => {
         <SalesCardContainer>
             <GradientHeader>
                 <Typography variant="body1" color='white'>{title}</Typography>
-                <CustomTooltip title={"Aqui encontraras el resumen de Hoy"}>
+                <CustomTooltip title={`Aqui encontraras el resumen de ${filter.toLowerCase()}`}>
                     <Image src="/info-circle.svg" width={16} height={16} alt="Icono Info" />
                 </CustomTooltip>
             </GradientHeader>
